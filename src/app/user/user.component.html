@@ -1,0 +1,24 @@
+<p>user works!</p>
+
+<table border="1">
+    <tr *ngFor="let i of user">
+        <td>{{i.id}}</td>
+        <td>{{i.name}}</td>
+        <td>{{i.age}}</td>
+    </tr>
+
+</table>
+
+
+<input type="submit" value="save" (click)="show()">
+
+
+<br>
+
+<input type="text" placeholder="enter color " [(ngModel)]="color">
+
+<div [style.backgroundColor]="color">
+
+    Property Binding
+
+</div>
