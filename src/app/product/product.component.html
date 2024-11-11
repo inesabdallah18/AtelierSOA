@@ -1,0 +1,24 @@
+<p>product works!</p>
+
+<label>
+  search by price
+</label>
+<input type="text" class="form-control" [(ngModel)]="priceMax">
+<div class="row">
+    <div class="col-md-4" *ngFor="let p of Product">
+        <ng-container *ngIf="p.price> priceMax || priceMax==null">
+
+            <div class="card" style="width: 18rem;">
+                <img class="card-img-top" src="..." alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">title : {{p.title}}</h5>
+                    <p class="card-text"> Price : {{p.price}}</p>
+                    <p class="card-text"> Quantity : {{p.quantity}} </p>
+                    <button class="btn btn-primary" (click)="buy(p.id)" [disabled]="p.quantity==0">buy</button>
+                </div>
+            </div>
+
+        </ng-container>
+    </div>
+
+</div>
