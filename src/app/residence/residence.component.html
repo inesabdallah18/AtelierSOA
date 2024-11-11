@@ -1,0 +1,10 @@
+<p>residence works!</p>
+<ul *ngFor="let r of listResidences">
+
+
+    <li>
+        {{r.id}} - {{r.name}} - {{r.address}}
+
+        <button class="btn btn-primary" (click)="showAPart(r.id)">show</button>
+    </li>
+</ul>
