@@ -8,7 +8,9 @@ import { Apartment } from '../model/Apartement';
   styleUrls: ['./residence.component.css']
 })
 export class ResidenceComponent {
+  surf!:number
   listAPP:Apartment[]=[];
+  listFav:Apartment[]=[];
   listResidences:Residence[]=[
     {id:1,"name": "El fel","address":"Borj Cedria",
     "image":"../../assets/images/R1.jpeg"},
@@ -30,4 +32,10 @@ export class ResidenceComponent {
     this.listAPP=  this.listApartments.filter((app)=>app.residence.id==id);
     console.log(this.listAPP);
     }
+
+    fav(i:number){
+      this.listFav.push(this.listApartments[i]);
+      console.log(this.listFav);
+    }
+
 }
