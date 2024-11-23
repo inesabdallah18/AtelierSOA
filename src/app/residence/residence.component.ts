@@ -8,20 +8,20 @@ import { Apartment } from '../model/Apartement';
   styleUrls: ['./residence.component.css']
 })
 export class ResidenceComponent {
-  surf!:number
-  listAPP:Apartment[]=[];
-  listFav:Apartment[]=[];
+  listFav:Residence[]=[];
   listResidences:Residence[]=[
     {id:1,"name": "El fel","address":"Borj Cedria",
-    "image":"../../assets/images/R1.jpeg"},
-    {id:2,"name": "El yasmine",
-    "address":"Ezzahra","image":"../../assets/images/R2.jpg"},
-    {id:3,"name": "El Arij",
-    "address":"Rades","image":"../../assets/images/R3.jpg"},
-    {id:4,"name": "El Anber","address":"Manzah 5",
-    "image":"../../assets/images/R4.jpg"}
-    ];
-
+      "image":"../../assets/images/R1.jpg", status: "Disponible"},
+      {id:2,"name": "El yasmine",
+      "address":"Ezzahra","image":"../../assets/images/R2.jpg", status:
+      "Disponible" },
+      {id:3,"name": "El Arij",
+      "address":"Rades","image":"../../assets/images/R3.jpg", status:
+      "Vendu"},
+      {id:4,"name": "El Anber","address":"inconnu",
+      "image":"../../assets/images/R4.jpg", status: "En Construction"}
+      ];
+/*
     listApartments:Apartment[]=[
       {id:1,"appartNum":1,"floorNum":0,"surface":100,"terrace":"oui","surfaceTerrace":20,"category":"S+1","description":"AppartementS+1","residence":this.listResidences[0] },
       {id:2,"appartNum":2,"floorNum":0,"surface":130,"terrace":"non","surfaceTerrace":0,"category":"S+2","description":"AppartementS+2","residence":this.listResidences[0] },
@@ -38,4 +38,20 @@ export class ResidenceComponent {
       console.log(this.listFav);
     }
 
+  */
+
+    showloc( adress : string ){
+      if (adress === "inconnu"){
+        alert("Adresse inconnue");
+      }else{
+        alert("Adresse : "+adress);
+      }
+    }
+
+    Like(residence: Residence){
+      if (!this.listFav.includes(residence)){
+        this.listFav.push(residence);
+
+      }
+    }
 }

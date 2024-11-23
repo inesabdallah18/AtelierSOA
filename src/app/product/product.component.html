@@ -9,12 +9,13 @@
         <ng-container *ngIf="p.price> priceMax || priceMax==null">
 
             <div class="card" style="width: 18rem;">
-                <img class="card-img-top" src="..." alt="Card image cap">
+                <img class="card-img-top" src="{{p.image}}" alt="Card image cap">
                 <div class="card-body">
                     <h5 class="card-title">title : {{p.title}}</h5>
                     <p class="card-text"> Price : {{p.price}}</p>
                     <p class="card-text"> Quantity : {{p.quantity}} </p>
                     <button class="btn btn-primary" (click)="buy(p.id)" [disabled]="p.quantity==0">buy</button>
+                    <button class="btn btn-primary">Detail</button>
                 </div>
             </div>
 
