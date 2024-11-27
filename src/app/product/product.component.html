@@ -15,7 +15,7 @@
                     <p class="card-text"> Price : {{p.price}}</p>
                     <p class="card-text"> Quantity : {{p.quantity}} </p>
                     <button class="btn btn-primary" (click)="buy(p.id)" [disabled]="p.quantity==0">buy</button>
-                    <button class="btn btn-primary">Detail</button>
+                    <button class="btn btn-primary" [routerLink]="['/detail',p.id]">Detail</button>
                 </div>
             </div>
 
