@@ -8,13 +8,25 @@ import { ProductService } from '../services/product.service';
   styleUrls: ['./product.component.css']
 })
 export class ProductComponent {
-    constructor(private ps : ProductService){}
-  priceMax!:number;
+  constructor(private ps: ProductService) { }
+  priceMax!:number
+  Product: Product[] = [];
 
-  Product:Product[]=this.ps.Product;
+  ngOnInit(){
+    this.Product= this.ps.Product
+  }
 
 
-      buy (id:number){
-         this.Product.find(p=>p.id==id)!.quantity--;
-      }
+  buy(id: number) {
+    this.Product.find(p => p.id === id)!.quantity--;
+  }
+
+    getStock(){
+        return this.ps.getcalcul(this.Product,'quantity',0)
+    }
+
+
+
+
+
 }
