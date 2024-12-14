@@ -13,6 +13,8 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { DetailProdComponent } from './detail-prod/detail-prod.component';
 import { AppartmentComponent } from './appartment/appartment.component';
 import { LoginComponent } from './login/login.component';
+import { AddProductComponent } from './add-product/add-product.component';
+import { AddResidenceComponent } from './add-residence/add-residence.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,9 @@ import { LoginComponent } from './login/login.component';
     NotFoundComponent,
     DetailProdComponent,
     AppartmentComponent,
-    LoginComponent
+    LoginComponent,
+    AddProductComponent,
+    AddResidenceComponent
   ],
   imports: [
     BrowserModule,

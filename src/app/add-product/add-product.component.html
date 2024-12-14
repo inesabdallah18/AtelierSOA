@@ -1,0 +1,41 @@
+<h1>Add Product</h1>
+
+<form [formGroup]="formLogin">
+    <div class="form-group">
+        <label for="exampleInputEmail1">id</label>
+        <input type="email" class="form-control" id="id" aria-describedby="emailHelp" placeholder="Enter email" formControlName="id">
+    </div>
+
+
+    <div class="form-group">
+        <label for="exampleInputPassword1">title</label>
+        <input type="text" class="form-control" id="exampleInputPassword1" placeholder="title" formControlName="title">
+    </div>
+    <div class="alert alert-danger" *ngIf="formLogin.controls['title'].invalid && formLogin.controls['title'].touched">
+        <p *ngIf="formLogin.get('title')?.errors?.['required']">login est obligatoire</p>
+        <p *ngIf="formLogin.controls['title'].hasError('minlength')">login minLength </p>
+    </div>
+
+    <div class="form-group">
+        <label for="price">price</label>
+        <input type="text" class="form-control" id="price" placeholder="price" formControlName="price">
+    </div>
+    <div class="alert alert-danger" *ngIf="formLogin.controls['price'].invalid && formLogin.controls['price'].touched">
+        <p *ngIf="formLogin.get('price')?.errors?.['required']">price est obligatoire</p>
+        <p *ngIf="formLogin.controls['price'].hasError('min')">price >=0</p>
+    </div>
+    <div class="form-group">
+        <label for="quantity">quantity</label>
+        <input type="text" class="form-control" id="quantity" placeholder="quantity" formControlName="quantity">
+    </div>
+    <div class="form-group">
+        <label for="image">image</label>
+        <input type="text" class="form-control" id="image" placeholder="quantity" formControlName="image">
+    </div>
+    <div class="form-check">
+        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+        <label class="form-check-label" for="exampleCheck1">Check me out</label>
+    </div>
+    <button type="submit" class="btn btn-primary" (click)="add()" [disabled]="formLogin.invalid">Submit</button>
+
+</form>

@@ -7,6 +7,8 @@ import { ResidenceComponent } from './residence/residence.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { DetailProdComponent } from './detail-prod/detail-prod.component';
 import { LoginComponent } from './login/login.component';
+import { AddProductComponent } from './add-product/add-product.component';
+import { AddResidenceComponent } from './add-residence/add-residence.component';
 
 const routes: Routes = [
   {path:'', redirectTo:'/login', pathMatch:'full'},
@@ -14,6 +16,8 @@ const routes: Routes = [
   {path:'home', component:HomeComponent},
   {path:'user', component:UserComponent},
   {path:'product', component:ProductComponent},
+  {path:'add-product', component:AddProductComponent},
+  {path :'addRes', component : AddResidenceComponent},
   {path:'residence', component:ResidenceComponent},
   {path:'detail/:id', component:DetailProdComponent},
   {path : '**' , component:NotFoundComponent}
