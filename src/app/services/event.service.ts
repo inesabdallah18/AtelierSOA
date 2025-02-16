@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Product } from '../model/product';
+import { Event} from '../model/event';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
@@ -7,8 +7,9 @@ import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class ProductService {
- api= 'http://localhost:3000/product';
+export class EventService {
+
+ api= 'http://localhost:3000/event';
  
   constructor(private http:HttpClient) { }
 
@@ -23,33 +24,28 @@ export class ProductService {
       }
       return nb
   }
-getAllProduct():Observable<Product[]>{
+getAllEvent():Observable<Event[]>{
 
-  return this.http.get<Product[]>('http://localhost:3000/product')
+  return this.http.get<Event[]>('http://localhost:3000/event')
 }
 
-getProductById(id: number): Observable<Product> {
-  return this.http.get<Product>(this.api +'/'+id);
+getEventById(id: number): Observable<Event> {
+  return this.http.get<Event>(this.api +'/'+id);
 }
 
-addProduct(product: 
+addEvent(event: 
 { id: string; title: string; price: string; quantity: string; image: string }):
  Observable<any> {
-  return this.http.post<any>(this.api, product);
+  return this.http.post<any>(this.api, event);
 }
 
-deleteProduct(id: number): Observable<any> {
+deleteEvent(id: number): Observable<any> {
   return this.http.delete<any>(`${this.api}/${id}`);  // Suppression du produit via son ID
 }
 
-updateProduct(prod:Product,id:number): Observable<Product> {
-  return this.http.put<Product>(this.api +'/'+id,prod); 
+updateEvent(prod:Event,id:number): Observable<Event> {
+  return this.http.put<Event>(this.api +'/'+id,prod); 
 }
 
 
-
-
 }
-
-
-

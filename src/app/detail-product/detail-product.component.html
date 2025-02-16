@@ -1,0 +1,47 @@
+<label ><strong>ID:</strong></label> {{id}} <br>
+<label ><strong>Title:</strong></label> {{product.title}} <br>
+<label ><strong>Price:</strong></label> {{product.price}} <br>
+<label ><strong>Quantity:</strong></label> {{product.quantity}} <br>
+
+<label for="price">Price</label>
+<div class="status-container">
+    <label for="status-input">New Status:</label>
+    <input type="text"  placeholder="Enter new status" />
+    <button  class="btn btn-success" (click)="changeTitle()" >Change Status</button>
+  
+  </div> 
+<!--***********************************************-->
+  <table style="width: 100%; border-collapse: collapse; border: 1px solid black;">
+    <tbody>
+      <!-- Ligne pour ID -->
+      <tr style="border-bottom: 1px solid black;">
+        <td style="padding: 8px;"><strong>ID:</strong></td>
+        <td style="padding: 8px;">{{ id }}</td>
+      </tr>
+      <!-- Ligne pour Title -->
+      <tr style="border-bottom: 1px solid black;">
+        <td style="padding: 8px;"><strong>Title:</strong></td>
+        <td style="padding: 8px;">{{ product.title }}</td>
+      </tr>
+      <!-- Ligne pour Price -->
+      <tr style="border-bottom: 1px solid black;">
+        <td style="padding: 8px;"><strong>Price:</strong></td>
+        <td style="padding: 8px;">{{ product.price }}</td>
+      </tr>
+      <!-- Ligne pour Quantity -->
+      <tr style="border-bottom: 1px solid black;">
+        <td style="padding: 8px;"><strong>Quantity:</strong></td>
+        <td style="padding: 8px;">{{ product.quantity }}</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  <!-- Formulaire pour le statut (inchangé) -->
+  <div class="status-container" style="margin-top: 20px;">
+    <label for="status-input"><strong>New Status:</strong></label>
+    <input type="text" id="status-input" placeholder="Enter new status" />
+    <button class="btn btn-success" (click)="changeTitle()">Change Status</button>
+  </div>
+  
+  
+  

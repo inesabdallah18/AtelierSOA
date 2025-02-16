@@ -1,14 +1,12 @@
 import { Injectable } from '@angular/core';
-import { Product } from '../model/product';
+import { Camping} from '../model/camping';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-
-
 @Injectable({
   providedIn: 'root'
 })
-export class ProductService {
- api= 'http://localhost:3000/product';
+export class CampingService {
+ api= 'http://localhost:3000/camping';
  
   constructor(private http:HttpClient) { }
 
@@ -23,27 +21,27 @@ export class ProductService {
       }
       return nb
   }
-getAllProduct():Observable<Product[]>{
+getAllCamping():Observable<Camping[]>{
 
-  return this.http.get<Product[]>('http://localhost:3000/product')
+  return this.http.get<Camping[]>('http://localhost:3000/camping')
 }
 
-getProductById(id: number): Observable<Product> {
-  return this.http.get<Product>(this.api +'/'+id);
+getCampingById(id: number): Observable<Camping> {
+  return this.http.get<Camping>(this.api +'/'+id);
 }
 
-addProduct(product: 
+addCamping(camping: 
 { id: string; title: string; price: string; quantity: string; image: string }):
  Observable<any> {
-  return this.http.post<any>(this.api, product);
+  return this.http.post<any>(this.api, camping);
 }
 
-deleteProduct(id: number): Observable<any> {
+deleteCamping(id: number): Observable<any> {
   return this.http.delete<any>(`${this.api}/${id}`);  // Suppression du produit via son ID
 }
 
-updateProduct(prod:Product,id:number): Observable<Product> {
-  return this.http.put<Product>(this.api +'/'+id,prod); 
+updateCamping(prod:Camping,id:number): Observable<Camping> {
+  return this.http.put<Camping>(this.api +'/'+id,prod); 
 }
 
 

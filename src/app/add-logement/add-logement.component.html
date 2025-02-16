@@ -1,0 +1,107 @@
+<div class="container">
+    <h2>Ajouter un Logement</h2>
+    
+    <form [formGroup]="logementForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="reference">Référence :</label>
+        <input
+          type="number"
+          id="reference"
+          formControlName="reference"
+          class="form-control"
+          placeholder="Entrez la référence"
+        />
+        <div *ngIf="logementForm.get('reference')?.invalid && logementForm.get('reference')?.touched" class="error">
+          La référence est obligatoire et doit être un nombre.
+        </div>
+      </div>
+  
+      <div class="form-group">
+        <label for="adresse">Adresse :</label>
+        <input
+          type="text"
+          id="adresse"
+          formControlName="adresse"
+          class="form-control"
+          placeholder="Entrez l'adresse"
+        />
+        <div *ngIf="logementForm.get('adresse')?.invalid && logementForm.get('adresse')?.touched" class="error">
+          L'adresse est obligatoire.
+        </div>
+      </div>
+  
+      <div class="form-group">
+        <label for="delegation">Délégation :</label>
+        <input
+          type="text"
+          id="delegation"
+          formControlName="delegation"
+          class="form-control"
+          placeholder="Entrez la délégation"
+        />
+        <div *ngIf="logementForm.get('delegation')?.invalid && logementForm.get('delegation')?.touched" class="error">
+          La délégation est obligatoire.
+        </div>
+      </div>
+  
+      <div class="form-group">
+        <label for="gouvernorat">Gouvernorat :</label>
+        <input
+          type="text"
+          id="gouvernorat"
+          formControlName="gouvernorat"
+          class="form-control"
+          placeholder="Entrez le gouvernorat"
+        />
+        <div *ngIf="logementForm.get('gouvernorat')?.invalid && logementForm.get('gouvernorat')?.touched" class="error">
+          Le gouvernorat est obligatoire.
+        </div>
+      </div>
+  
+      <div class="form-group">
+        <label for="type">Type :</label>
+        <input
+          type="text"
+          id="type"
+          formControlName="type"
+          class="form-control"
+          placeholder="Entrez le type de logement"
+        />
+        <div *ngIf="logementForm.get('type')?.invalid && logementForm.get('type')?.touched" class="error">
+          Le type est obligatoire.
+        </div>
+      </div>
+  
+      <div class="form-group">
+        <label for="description">Description :</label>
+        <textarea
+          id="description"
+          formControlName="description"
+          class="form-control"
+          placeholder="Entrez la description"
+        ></textarea>
+        <div *ngIf="logementForm.get('description')?.invalid && logementForm.get('description')?.touched" class="error">
+          La description est obligatoire.
+        </div>
+      </div>
+  
+      <div class="form-group">
+        <label for="prix">Prix :</label>
+        <input
+          type="number"
+          id="prix"
+          formControlName="prix"
+          class="form-control"
+          placeholder="Entrez le prix"
+        />
+        <div *ngIf="logementForm.get('prix')?.invalid && logementForm.get('prix')?.touched" class="error">
+          Le prix est obligatoire et doit être un nombre.
+        </div>
+      </div>
+  
+      <button type="submit" class="btn btn-primary" [disabled]="logementForm.invalid">
+        Ajouter Logement
+      </button>
+    </form>
+  </div>
+  

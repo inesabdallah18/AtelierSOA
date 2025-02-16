@@ -1,25 +1,54 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { HomeComponent } from './home/home.component';
-import { UserComponent } from './user/user.component';
+
+
 import { ProductComponent } from './product/product.component';
-import { ResidenceComponent } from './residence/residence.component';
+
 import { NotFoundComponent } from './not-found/not-found.component';
-import { DetailProdComponent } from './detail-prod/detail-prod.component';
-import { LoginComponent } from './login/login.component';
+
+ 
+import { DetailProductComponent } from './detail-product/detail-product.component';
 import { AddProductComponent } from './add-product/add-product.component';
-import { AddResidenceComponent } from './add-residence/add-residence.component';
+import { TaskComponent } from './task/task.component';
+import { CampingComponent } from './camping/camping.component';
+import { EventComponent } from './event/event.component';
+import { AddCampingComponent } from './add-camping/add-camping.component';
+import { AddEventComponent } from './add-event/add-event.component';
+import { LogementComponent } from './logement/logement.component';
+import { AddLogementComponent} from './add-logement/add-logement.component';
 
 const routes: Routes = [
-  {path:'', redirectTo:'/login', pathMatch:'full'},
-  {path :'login' ,  component: LoginComponent},
-  {path:'home', component:HomeComponent},
-  {path:'user', component:UserComponent},
+  {path:'', redirectTo:'/product', pathMatch:'full'},
+  
+  
+
   {path:'product', component:ProductComponent},
   {path:'add-product', component:AddProductComponent},
-  {path :'addRes', component : AddResidenceComponent},
-  {path:'residence', component:ResidenceComponent},
-  {path:'detail/:id', component:DetailProdComponent},
+  {path:'task', component:TaskComponent},
+  {path:'add-logement', component:AddLogementComponent},
+ 
+  {path:'logement', component:LogementComponent},
+
+  {path:'update/:id', component:AddProductComponent},
+  {path:'updatee/:id', component:AddCampingComponent},
+  {path:'updateee/:id', component:AddEventComponent},
+
+
+  
+  {path:'detail/:id', component:DetailProductComponent},
+   
+  {path:'camping', component:CampingComponent},
+  {path:'event', component:EventComponent},
+    
+  {path:'add-camping', component:AddCampingComponent},
+  {path:'add-event', component:AddEventComponent},
+
+
+
+
+
+
+
   {path : '**' , component:NotFoundComponent}
 
 ];

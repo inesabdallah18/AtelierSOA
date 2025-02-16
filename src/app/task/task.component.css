@@ -1,0 +1,21 @@
+.container {
+    display: flex; /* Affiche les éléments enfants verticalement */
+    flex-direction: column; /* Aligne les cartes verticalement */
+    width: 100vw; /* Le conteneur occupe toute la largeur de l'écran */
+    margin: 0;
+    padding: 0; /* Retire toute marge/padding par défaut */
+  }
+  
+  .card {
+    border: 1px solid #ddd;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    width: 100%; /* Assure que chaque carte prend toute la largeur du conteneur */
+    margin: 10px 0; /* Marge entre les cartes */
+  }
+  
+  .card img {
+    object-fit: cover; /* L'image s'adapte à la taille de la carte sans déformation */
+    width: 100%; /* L'image prend toute la largeur de la carte */
+    height: 100%; /* L'image prend toute la hauteur de la carte */
+  }
+  

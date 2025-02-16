@@ -1,0 +1,79 @@
+<h1>Add Event</h1>
+
+<form [formGroup]="formLogin" (ngSubmit)="save()">
+  <!-- Champ ID -->
+  <div class="form-group">
+    <label for="id">ID</label>
+    <input type="text" class="form-control" id="id" formControlName="id" placeholder="Enter ID">
+    <div class="alert alert-danger" *ngIf="formLogin.get('id')?.invalid && formLogin.get('id')?.touched">
+      <p *ngIf="formLogin.get('id')?.hasError('required')">ID is required.</p>
+    </div>
+  </div>
+
+    <!-- Champ Description -->
+    <div class="form-group">
+        <label for="title">Title </label>
+        <input type="text" class="form-control" id="title" placeholder="Enter title" formControlName="title">
+    </div>
+    <div class="alert alert-danger" *ngIf="formLogin.controls['title'].invalid && formLogin.controls['title'].touched">
+        <p *ngIf="formLogin.get('description')?.errors?.['required']">title is required and 10 caracteres </p>
+        <p *ngIf="formLogin.controls['title'].hasError('min')">minimum 10 caracteres</p>
+    </div>
+
+  <!-- Champ Description -->
+  <div class="form-group">
+    <label for="description">Description</label>
+    <input type="text" class="form-control" id="price" placeholder="Enter description" formControlName="description">
+</div>
+<div class="alert alert-danger" *ngIf="formLogin.controls['description'].invalid && formLogin.controls['description'].touched">
+    <p *ngIf="formLogin.get('description')?.errors?.['required']">description is required </p>
+    <p *ngIf="formLogin.controls['description'].hasError('min')">10 caracteres</p>
+</div>
+
+<div class="form-group">
+    <label for="lieu">Lieu</label>
+    <input type="text" class="form-control" id="price" placeholder="Enter lieu" formControlName="lieu">
+</div>
+<div class="alert alert-danger" *ngIf="formLogin.controls['lieu'].invalid && formLogin.controls['lieu'].touched">
+    <p *ngIf="formLogin.get('lieu')?.errors?.['required']">lieu is required </p>
+   
+</div>
+
+
+  <div class="form-group">
+    <label for="date">Date</label>
+    <input type="date" class="form-control" id="price" placeholder="Enter date" formControlName="date">
+</div>
+<div class="alert alert-danger" *ngIf="formLogin.controls['date'].invalid && formLogin.controls['date'].touched">
+    <p *ngIf="formLogin.get('date')?.errors?.['required']">date is required </p>
+ 
+ 
+</div>
+
+
+
+  <!-- Champ Etat -->
+  <div class="form-group">
+    <label for="disponible">Disponible</label>
+    <select class="form-control" id="disponible" formControlName="disponible">
+      <option [value]="true">true</option>
+      <option [value]="false">false</option>
+    </select>
+  </div>
+
+    <!-- Champ NbPlace -->
+    <div class="form-group">
+        <label for="nbrMax">Nb Max</label>
+        <input type="number" class="form-control" id="nbrMax" formControlName="nbrMax" placeholder="Enter number of places">
+        <div class="alert alert-danger" *ngIf="formLogin.get('nbrMax')?.invalid && formLogin.get('nbrMax')?.touched">
+          <p *ngIf="formLogin.get('nbrMax')?.hasError('required')">Nb Place is required.</p>
+          <p *ngIf="formLogin.get('nbrMax')?.hasError('min')">Nb Place must be greater than or equal to 0.</p>
+        </div>
+      </div>
+    
+
+  <!-- Bouton Submit -->
+  <button type="submit" class="btn btn-primary" [disabled]="formLogin.invalid">Submit</button>
+</form>
+
+
